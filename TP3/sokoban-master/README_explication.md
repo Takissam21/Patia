@@ -189,6 +189,8 @@ Si le programme est lancé sur une machine distante en SSH, il faut créer un tu
 
 Dans un deuxième terminal local, lancer :
 
+    ssh -L 8888:localhost:8888 ecloud@adresse
+    
     ssh -L 8888:localhost:8888 ecloud@10.0.22.87
 
 Ensuite, ouvrir dans le navigateur local :
