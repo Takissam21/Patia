@@ -10,18 +10,6 @@ Le rendu demandé contient principalement :
 - les fichiers problèmes du taquin correspondant aux instances testées ;
 - un exemple supplémentaire avec le problème Pursuit-Evasion.
 
-## Contenu du dossier
-
-- `pddl4j-4.0.0.jar` : planificateur PDDL4J
-- `pddl4j.sh` : script interactif pour lancer PDDL4J
-- `hanoi/domain.pddl` : domaine PDDL des Tours de Hanoï
-- `hanoi/p01.pddl` : problème des Tours de Hanoï avec 3 disques et 3 piquets
-- `taquin/domain.pddl` : domaine PDDL du taquin
-- `taquin/p01.pddl` : premier problème de taquin
-- `taquin/p02.pddl` : deuxième problème de taquin
-- `pursuit/domain.pddl` : domaine PDDL du problème Pursuit-Evasion
-- `pursuit/p01.pddl` : problème Pursuit-Evasion
-
 ## Exercice 2 : Tour de Hanoï
 
 Le domaine `hanoi/domain.pddl` modélise le problème des Tours de Hanoï.
@@ -78,10 +66,6 @@ Le fichier problème correspondant est :
 ## Exécution
 
 Toutes les commandes suivantes sont à lancer depuis le dossier `pddl`.
-
-### Vérifier Java
-
-`java -version`
 
 ### Lancer le problème des Tours de Hanoï
 
@@ -173,5 +157,3 @@ Ce README détaille principalement :
 - l’exercice 2 : Tours de Hanoï ;
 - l’exercice 3 : Taquin ;
 - l’exercice 5 : Pursuit-Evasion.
-
-Le rendu demandé met surtout l’accent sur Hanoï et le Taquin, mais Pursuit-Evasion est aussi présent dans le dossier du TP.
