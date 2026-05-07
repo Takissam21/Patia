@@ -1,0 +1,27 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/logistics/strips-typed/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/logistics/strips-typed/p08.pddl" done successfully
+
+Encoding : successfully done (135028 clauses, 13 steps)
+Trying with 13 action step(s)
+No plan with 13 action step(s)
+Encoding : successfully done (145410 clauses, 14 steps)
+Trying with 14 action step(s)
+SAT solution found with 14 action step(s)
+00: (     load-truck obj13 tru1 pos1) [0]
+01: (     load-truck obj12 tru1 pos1) [0]
+02: (drive-truck tru1 pos1 apt1 cit1) [0]
+03: (     load-truck obj22 tru2 pos2) [0]
+04: (   unload-truck obj13 tru1 apt1) [0]
+05: (  load-airplane obj13 apn1 apt1) [0]
+06: (    fly-airplane apn1 apt1 apt2) [0]
+07: (   unload-truck obj12 tru1 apt1) [0]
+08: (unload-airplane obj13 apn1 apt2) [0]
+09: (drive-truck tru2 pos2 apt2 cit2) [0]
+10: (     load-truck obj13 tru2 apt2) [0]
+11: (   unload-truck obj22 tru2 apt2) [0]
+12: (drive-truck tru2 apt2 pos2 cit2) [0]
+13: (   unload-truck obj13 tru2 pos2) [0]
+
+Plan written for VAL in file: sat_plan.txt

@@ -1,0 +1,47 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/p006.pddl" done successfully
+
+Encoding : successfully done (20628 clauses, 9 steps)
+Trying with 9 action step(s)
+No plan with 9 action step(s)
+Encoding : successfully done (22915 clauses, 10 steps)
+Trying with 10 action step(s)
+No plan with 10 action step(s)
+Encoding : successfully done (25202 clauses, 11 steps)
+Trying with 11 action step(s)
+No plan with 11 action step(s)
+Encoding : successfully done (27489 clauses, 12 steps)
+Trying with 12 action step(s)
+No plan with 12 action step(s)
+Encoding : successfully done (29776 clauses, 13 steps)
+Trying with 13 action step(s)
+No plan with 13 action step(s)
+Encoding : successfully done (32063 clauses, 14 steps)
+Trying with 14 action step(s)
+No plan with 14 action step(s)
+Encoding : successfully done (34350 clauses, 15 steps)
+Trying with 15 action step(s)
+No plan with 15 action step(s)
+Encoding : successfully done (36637 clauses, 16 steps)
+Trying with 16 action step(s)
+SAT solution found with 16 action step(s)
+00: (unstack d e) [0]
+01: ( put-down d) [0]
+02: (unstack e c) [0]
+03: ( put-down e) [0]
+04: (unstack c a) [0]
+05: ( put-down c) [0]
+06: (unstack a b) [0]
+07: ( put-down a) [0]
+08: (  pick-up e) [0]
+09: (  stack e a) [0]
+10: (  pick-up b) [0]
+11: (  stack b e) [0]
+12: (  pick-up c) [0]
+13: (  stack c b) [0]
+14: (  pick-up d) [0]
+15: (  stack d c) [0]
+
+Plan written for VAL in file: sat_plan.txt

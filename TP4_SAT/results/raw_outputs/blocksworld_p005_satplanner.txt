@@ -1,0 +1,29 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/p005.pddl" done successfully
+
+Encoding : successfully done (16054 clauses, 7 steps)
+Trying with 7 action step(s)
+No plan with 7 action step(s)
+Encoding : successfully done (18341 clauses, 8 steps)
+Trying with 8 action step(s)
+No plan with 8 action step(s)
+Encoding : successfully done (20628 clauses, 9 steps)
+Trying with 9 action step(s)
+No plan with 9 action step(s)
+Encoding : successfully done (22915 clauses, 10 steps)
+Trying with 10 action step(s)
+SAT solution found with 10 action step(s)
+00: (unstack b a) [0]
+01: ( put-down b) [0]
+02: (unstack a d) [0]
+03: (  stack a e) [0]
+04: (  pick-up b) [0]
+05: (  stack b a) [0]
+06: (  pick-up c) [0]
+07: (  stack c b) [0]
+08: (  pick-up d) [0]
+09: (  stack d c) [0]
+
+Plan written for VAL in file: sat_plan.txt

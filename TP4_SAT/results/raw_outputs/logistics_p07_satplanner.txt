@@ -1,0 +1,12 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/logistics/strips-typed/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/logistics/strips-typed/p07.pddl" done successfully
+
+Encoding : successfully done (238848 clauses, 23 steps)
+Trying with 23 action step(s)
+No plan with 23 action step(s)
+Encoding : successfully done (249230 clauses, 24 steps)
+Trying with 24 action step(s)
+
+TIMEOUT after 180 seconds

@@ -1,0 +1,11 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/taquin/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/taquin/p01.pddl" done successfully
+
+Encoding : successfully done (19812 clauses, 1 steps)
+Trying with 1 action step(s)
+SAT solution found with 1 action step(s)
+0: (move t1 c1 c2) [0]
+
+Plan written for VAL in file: sat_plan.txt

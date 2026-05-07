@@ -1,0 +1,16 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/domain.pddl" done successfully
+parsing problem file "/home/b/benmohaa/Bureau/Exercices-20260326/YetAnotherSATPlanner/benchmarks/blocks/p003.pddl" done successfully
+
+Encoding : successfully done (6788 clauses, 6 steps)
+Trying with 6 action step(s)
+SAT solution found with 6 action step(s)
+0: (unstack c b) [0]
+1: (  stack c d) [0]
+2: (  pick-up b) [0]
+3: (  stack b c) [0]
+4: (  pick-up a) [0]
+5: (  stack a b) [0]
+
+Plan written for VAL in file: sat_plan.txt
