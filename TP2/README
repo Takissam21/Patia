@@ -4,10 +4,11 @@
 
 Dans cette partie, on utilise le langage PDDL pour modéliser des problèmes de planification automatique.
 
-Le rendu demandé contient :
+Le rendu demandé contient principalement :
 - le fichier domaine et problème pour les Tours de Hanoï avec 3 disques et 3 piquets ;
 - le fichier domaine pour le taquin ;
-- les fichiers problèmes du taquin correspondant aux instances testées.
+- les fichiers problèmes du taquin correspondant aux instances testées ;
+- un exemple supplémentaire avec le problème Pursuit-Evasion.
 
 ## Contenu du dossier
 
@@ -18,8 +19,10 @@ Le rendu demandé contient :
 - `taquin/domain.pddl` : domaine PDDL du taquin
 - `taquin/p01.pddl` : premier problème de taquin
 - `taquin/p02.pddl` : deuxième problème de taquin
+- `pursuit/domain.pddl` : domaine PDDL du problème Pursuit-Evasion
+- `pursuit/p01.pddl` : problème Pursuit-Evasion
 
-## Tour de Hanoï
+## Exercice 2 : Tour de Hanoï
 
 Le domaine `hanoi/domain.pddl` modélise le problème des Tours de Hanoï.
 
@@ -38,7 +41,7 @@ Le fichier problème correspondant est :
 
 `hanoi/p01.pddl`
 
-## Taquin
+## Exercice 3 : Taquin
 
 Le domaine `taquin/domain.pddl` modélise un taquin.
 
@@ -56,6 +59,21 @@ Les fichiers problèmes fournis sont :
 `taquin/p02.pddl`
 
 Ils représentent deux configurations différentes du taquin.
+
+## Exercice 5 : Pursuit-Evasion
+
+Le domaine `pursuit/domain.pddl` modélise le problème de Pursuit-Evasion.
+
+Dans ce problème :
+- un intrus se déplace sur un graphe ;
+- des poursuivants explorent les sommets du graphe ;
+- l’objectif est de trouver une stratégie permettant aux poursuivants de capturer l’intrus.
+
+La capture est réalisée lorsqu’un poursuivant se trouve sur le même sommet que l’intrus.
+
+Le fichier problème correspondant est :
+
+`pursuit/p01.pddl`
 
 ## Exécution
 
@@ -82,6 +100,12 @@ Résultat attendu : le planificateur doit trouver un plan permettant d’atteind
 `java -cp ./pddl4j-4.0.0.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.planners.statespace.HSP taquin/domain.pddl taquin/p02.pddl -t 10 -e FAST_FORWARD`
 
 Résultat attendu : le planificateur doit trouver un plan permettant d’atteindre la configuration objectif.
+
+### Lancer le problème Pursuit-Evasion
+
+`java -cp ./pddl4j-4.0.0.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.planners.statespace.FF pursuit/domain.pddl pursuit/p01.pddl -t 10`
+
+Résultat attendu : le planificateur doit trouver un plan permettant aux poursuivants d’atteindre une configuration de capture.
 
 ## Exécution avec le script interactif
 
@@ -115,6 +139,14 @@ ou :
 
 `10`
 
+Pour Pursuit-Evasion, donner :
+
+`pursuit/domain.pddl`
+
+`pursuit/p01.pddl`
+
+`10`
+
 ## Résultats attendus
 
 Pour chaque exécution, PDDL4J doit afficher que les fichiers ont été correctement lus, puis qu’un plan a été trouvé.
@@ -135,6 +167,11 @@ Cela confirme que :
 
 ## Remarque
 
-Les dossiers `blocks`, `logistics`, `rover` et `pursuit` peuvent être présents dans le répertoire, mais le rendu demandé pour cette partie concerne principalement :
-- les Tours de Hanoï ;
-- le taquin.
+Pendant le TP, plusieurs exercices ont été explorés.
+
+Ce README détaille principalement :
+- l’exercice 2 : Tours de Hanoï ;
+- l’exercice 3 : Taquin ;
+- l’exercice 5 : Pursuit-Evasion.
+
+Le rendu demandé met surtout l’accent sur Hanoï et le Taquin, mais Pursuit-Evasion est aussi présent dans le dossier du TP.
