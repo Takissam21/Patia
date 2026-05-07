@@ -1,0 +1,140 @@
+# PATIA – Partie 2 : PDDL
+
+## Objectif
+
+Dans cette partie, on utilise le langage PDDL pour modéliser des problèmes de planification automatique.
+
+Le rendu demandé contient :
+- le fichier domaine et problème pour les Tours de Hanoï avec 3 disques et 3 piquets ;
+- le fichier domaine pour le taquin ;
+- les fichiers problèmes du taquin correspondant aux instances testées.
+
+## Contenu du dossier
+
+- `pddl4j-4.0.0.jar` : planificateur PDDL4J
+- `pddl4j.sh` : script interactif pour lancer PDDL4J
+- `hanoi/domain.pddl` : domaine PDDL des Tours de Hanoï
+- `hanoi/p01.pddl` : problème des Tours de Hanoï avec 3 disques et 3 piquets
+- `taquin/domain.pddl` : domaine PDDL du taquin
+- `taquin/p01.pddl` : premier problème de taquin
+- `taquin/p02.pddl` : deuxième problème de taquin
+
+## Tour de Hanoï
+
+Le domaine `hanoi/domain.pddl` modélise le problème des Tours de Hanoï.
+
+Dans ce problème :
+- il y a 3 disques ;
+- il y a 3 piquets ;
+- au départ, tous les disques sont sur le premier piquet ;
+- l’objectif est de déplacer tous les disques vers le dernier piquet.
+
+Les règles classiques sont respectées :
+- on ne peut déplacer qu’un disque à la fois ;
+- seul le disque au sommet d’un piquet peut être déplacé ;
+- on ne peut pas poser un grand disque sur un disque plus petit.
+
+Le fichier problème correspondant est :
+
+`hanoi/p01.pddl`
+
+## Taquin
+
+Le domaine `taquin/domain.pddl` modélise un taquin.
+
+Un état du taquin est décrit avec :
+- la position des tuiles ;
+- la case vide ;
+- les relations d’adjacence entre les cases.
+
+L’action principale permet de déplacer une tuile vers la case vide si les deux cases sont adjacentes.
+
+Les fichiers problèmes fournis sont :
+
+`taquin/p01.pddl`
+
+`taquin/p02.pddl`
+
+Ils représentent deux configurations différentes du taquin.
+
+## Exécution
+
+Toutes les commandes suivantes sont à lancer depuis le dossier `pddl`.
+
+### Vérifier Java
+
+`java -version`
+
+### Lancer le problème des Tours de Hanoï
+
+`java -cp ./pddl4j-4.0.0.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.planners.statespace.FF hanoi/domain.pddl hanoi/p01.pddl -t 10`
+
+Résultat attendu : le planificateur doit trouver un plan de 7 actions pour déplacer les 3 disques vers le piquet final.
+
+### Lancer le premier problème de taquin
+
+`java -cp ./pddl4j-4.0.0.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.planners.statespace.FF taquin/domain.pddl taquin/p01.pddl -t 10`
+
+Résultat attendu : le planificateur doit trouver un plan permettant d’atteindre la configuration objectif.
+
+### Lancer le deuxième problème de taquin
+
+`java -cp ./pddl4j-4.0.0.jar -server -Xms2048m -Xmx2048m fr.uga.pddl4j.planners.statespace.HSP taquin/domain.pddl taquin/p02.pddl -t 10 -e FAST_FORWARD`
+
+Résultat attendu : le planificateur doit trouver un plan permettant d’atteindre la configuration objectif.
+
+## Exécution avec le script interactif
+
+On peut aussi utiliser le script fourni :
+
+`chmod +x pddl4j.sh`
+
+`./pddl4j.sh`
+
+Pour Hanoï, choisir le planificateur `FF`, puis donner :
+
+`hanoi/domain.pddl`
+
+`hanoi/p01.pddl`
+
+`10`
+
+Pour le taquin, choisir le planificateur adapté, puis donner :
+
+`taquin/domain.pddl`
+
+`taquin/p01.pddl`
+
+`10`
+
+ou :
+
+`taquin/domain.pddl`
+
+`taquin/p02.pddl`
+
+`10`
+
+## Résultats attendus
+
+Pour chaque exécution, PDDL4J doit afficher que les fichiers ont été correctement lus, puis qu’un plan a été trouvé.
+
+On doit notamment voir des messages du type :
+
+`parsing domain file done successfully`
+
+`parsing problem file done successfully`
+
+`found plan as follows`
+
+Cela confirme que :
+- les fichiers PDDL sont syntaxiquement corrects ;
+- le domaine est bien compris par le planificateur ;
+- le problème est résolu ;
+- un plan d’actions est généré.
+
+## Remarque
+
+Les dossiers `blocks`, `logistics`, `rover` et `pursuit` peuvent être présents dans le répertoire, mais le rendu demandé pour cette partie concerne principalement :
+- les Tours de Hanoï ;
+- le taquin.
