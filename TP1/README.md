@@ -110,6 +110,13 @@ Le script :
 - trie les instances selon la difficulté mesurée par BFS
 - génère le graphe final `benchmark_npuzzle_all.png`
 
+### Récupérer le graphe depuis une machine distante
+
+Si le benchmark est lancé sur une machine distante en SSH, le graphe peut être copié sur la machine locale avec `scp`.
+
+Depuis un terminal local, lancer :
+`scp user@adresse_ip:/chemin/vers/TP1/instances_v3/benchmark_npuzzle_all.png .`
+
 ## Ce qu’on observe sur le graphe
 
 Sur le graphe final, on voit que :
