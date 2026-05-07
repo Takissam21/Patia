@@ -141,12 +141,32 @@ Le fichier généré est :
     pddl/sokoban/from_agent.pddl
 
 Ce fichier est recréé à chaque lancement de l’agent. Il n’est donc pas nécessaire de le modifier à la main.
+## Installation de PDDL4J
+
+Avant de compiler le projet, il faut installer `pddl4j-4.0.0.jar` dans le dépôt Maven local.
+
+Sur la machine virtuelle, on utilise aussi l’option `MAVEN_OPTS` pour prendre en compte les proxies système :
+
+    MAVEN_OPTS="-Djava.net.useSystemProxies=true" mvn install:install-file \
+       -Dfile=pddl4j-4.0.0.jar \
+       -DgroupId=fr.uga \
+       -DartifactId=pddl4j \
+       -Dversion=4.0.0 \
+       -Dpackaging=jar \
+       -DgeneratePom=true
 
 ## Compilation
 
-Depuis la racine du projet :
+Depuis la racine du projet, lancer :
 
-    mvn clean package
+    mvn clean
+    mvn compile
+    mvn test
+    mvn package
+
+La commande `mvn package` génère le fichier exécutable :
+
+    target/sokoban-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 ## Lancement
 
@@ -157,9 +177,25 @@ Après compilation, lancer :
       -cp target/sokoban-1.0-SNAPSHOT-jar-with-dependencies.jar \
       sokoban.SokobanMain
 
+Il faut laisser ce terminal ouvert, car il lance le serveur local permettant de visualiser les solutions.
+
+## Visualisation des solutions
+
 L’interface web est ensuite disponible ici :
 
     http://localhost:8888/test.html
+
+Si le programme est lancé sur une machine distante en SSH, il faut créer un tunnel SSH depuis la machine locale.
+
+Dans un deuxième terminal local, lancer :
+
+    ssh -L 8888:localhost:8888 ecloud@10.0.22.87
+
+Ensuite, ouvrir dans le navigateur local :
+
+    http://localhost:8888/test.html
+
+Le premier terminal doit rester ouvert avec `SokobanMain`, et le deuxième terminal doit rester ouvert avec le tunnel SSH.
 
 ## Choix du niveau
 
